@@ -28,7 +28,7 @@
     {
       "name": "beer",
       "description": "drink the beer",
-      "cost": "2$",
+      "cost": "5$",
       "review": "good beer",
       "placeId": "2",
       "id": 2

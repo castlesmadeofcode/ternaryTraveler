@@ -18,6 +18,13 @@ const interestsContainer = document.getElementById("interestsContainer");
 const hiddenInterestId = document.querySelector("#interestId")
 
 
+
+const showVisibility = () => {
+    nameField.style.display='block'
+    descriptionField.style.display='block'
+    locationField.style.display='block'
+}
+
 const clearForm = () => {
   
     hiddenInterestId.value = "";
@@ -65,15 +72,13 @@ const events = {
 
             API.updateInterestEntry(newInterest)
                 .then(render.renderAllInterests)
-                .then(clearForm);
-                nameField.style.visibility='visible'
-                descriptionField.style.visibility='visible'
-                locationField.style.visibility='visible'
+                .then(clearForm)
+                .then(showVisibility)
 
             }
             
             else if (interestName.value !== "" && interestDescription.value !== ""
-            && interestCost.value !== "" && interestLocation.value !== "") {
+             && interestLocation.value !== "") {
 
 
             interestsContainer.textContent = ""
@@ -84,25 +89,33 @@ const events = {
 
         }
         else {
-            window.alert("fill out all the things!")
+            window.alert("please fill out the necessary fields to continue (name,description,location)")
         }
         })
     },
     addDeleteButtonListeners() {
         interestsContainer.addEventListener("click", (event) => {
 
-            if (event.target.id.startsWith("deleteInterest--")) {
+                 
+              if (event.target.id.startsWith("deleteInterest--")) {
                 const deleteBtnId = event.target.id.split("--")[1];
 
                 interestsContainer.textContent = ""
-
+                if (confirm("Want to delete?") === true) {
                 API.deleteInterest(deleteBtnId)
                     .then(render.renderAllInterests)
+                    showVisibility();
+
+                }
+                else {
+                    render.renderAllInterests();
+                    showVisibility();
+                }
             }
             else if (event.target.id.startsWith("editInterest--")) {
-                nameField.style.visibility='hidden'
-                descriptionField.style.visibility='hidden'
-                locationField.style.visibility='hidden'
+                nameField.style.display='none'
+                descriptionField.style.display='none'
+                locationField.style.display='none'
 
                 const interestToEdit = event.target.id.split("--")[1];
 
