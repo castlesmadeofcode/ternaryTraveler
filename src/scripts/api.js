@@ -14,7 +14,12 @@ const API = {
             body: JSON.stringify(newInterest)
         }).then(response => response.json())
 
-    }
+    },
+    deleteInterest(id) {
+        return fetch(`${baseUrl}/interests/${id}`, {
+          method: "DELETE"
+        })
+      }
 }
 
 export default API

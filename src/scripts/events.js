@@ -5,8 +5,9 @@ const interestName = document.getElementById("interestName");
 const interestDescription = document.getElementById("interestDescription");
 const interestCost = document.getElementById("interestCost");
 const interestReview = document.getElementById("interestReview")
-// const interestLocation = document.getElementById("interestLocation");
 const saveButton = document.getElementById("saveButton");
+const interestsContainer = document.getElementById("interestsContainer");
+
 
 
 const events = {
@@ -23,11 +24,24 @@ const events = {
             console.log(newInterest);
 
             API.addNewInterest(newInterest)
-            .then(render.renderAllInterests())
+                .then(render.renderAllInterests)
+        })
+    },
+    addDeleteButtonListeners() {
+        interestsContainer.addEventListener("click", (event) => {
+
+            if (event.target.id.startsWith("delete--")) {
+                const deleteBtnId = event.target.id.split("--")[1];
+
+                interestsContainer.textContent = ""
+
+                API.deleteInterest(deleteBtnId)
+                    .then(render.renderAllInterests)
+            }
+
         })
     }
 }
 
-      
 
 export default events

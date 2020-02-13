@@ -5,3 +5,5 @@ import events from "./events.js";
 render.renderAllInterests()
 
 events.addSaveButtonListener()
+
+events.addDeleteButtonListeners()
