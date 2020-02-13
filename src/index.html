@@ -14,33 +14,41 @@
 
     <form action="" id="journal">
         <fieldset>
-                <legend for="interestName">Name of interest: </legend>
+            <legend for="interestName">Name of interest: </legend>
 
             <input type="text" name="interestName" id="interestName">
         </fieldset>
         <fieldset>
-                <legend for="interestDescription">Description: </legend>
+            <legend for="interestDescription">Description: </legend>
 
             <textarea name="interestDescription" id="interestDescription" rows="3" cols="33"></textarea>
         </fieldset>
         <fieldset>
-                <legend for="interestCost">Cost: </legend>
+            <legend for="interestCost">Cost: </legend>
 
             <input type="text" name="interestCost" id="interestCost">
         </fieldset>
         <fieldset>
-                <legend for="interestLocation">interestLocation: </legend>
+            <legend for="interestReview">Review: </legend>
+
+            <input type="text" name="interestReview" id="interestReview">
+        </fieldset>
+        <fieldset>
+            <legend for="interestLocation">interestLocation: </legend>
 
             <select id="interestLocation">
-                <option value="Italy">Italy</option>
-                <option value="Switzerland">Switzerland</option>
-                <option value="France">France</option>
-     
+                <option value="1">Italy</option>
+                <option value="2">Switzerland</option>
+                <option value="3">France</option>
+
             </select>
         </fieldset>
 
     </form>
 
+    <fieldset>
+            <button id="saveButton" class="saveBtn">Save</button>
+        </fieldset>
     <section id="interestsContainer"></section>
 
 
