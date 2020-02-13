@@ -18,6 +18,13 @@ const interestsContainer = document.getElementById("interestsContainer");
 const hiddenInterestId = document.querySelector("#interestId")
 
 
+
+const showVisibility = () => {
+    nameField.style.visibility='visible'
+    descriptionField.style.visibility='visible'
+    locationField.style.visibility='visible'
+}
+
 const clearForm = () => {
   
     hiddenInterestId.value = "";
@@ -65,10 +72,8 @@ const events = {
 
             API.updateInterestEntry(newInterest)
                 .then(render.renderAllInterests)
-                .then(clearForm);
-                nameField.style.visibility='visible'
-                descriptionField.style.visibility='visible'
-                locationField.style.visibility='visible'
+                .then(clearForm)
+                .then(showVisibility)
 
             }
             
@@ -91,13 +96,21 @@ const events = {
     addDeleteButtonListeners() {
         interestsContainer.addEventListener("click", (event) => {
 
-            if (event.target.id.startsWith("deleteInterest--")) {
+                 
+              if (event.target.id.startsWith("deleteInterest--")) {
                 const deleteBtnId = event.target.id.split("--")[1];
 
                 interestsContainer.textContent = ""
-
+                if (confirm("Want to delete?") === true) {
                 API.deleteInterest(deleteBtnId)
                     .then(render.renderAllInterests)
+                    showVisibility();
+
+                }
+                else {
+                    render.renderAllInterests();
+                    showVisibility();
+                }
             }
             else if (event.target.id.startsWith("editInterest--")) {
                 nameField.style.visibility='hidden'
