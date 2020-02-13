@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Ternary Traveler</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+
+    <form action="" id="journal">
+        <fieldset>
+                <legend for="interestName">Name of interest: </legend>
+
+            <input type="text" name="interestName" id="interestName">
+        </fieldset>
+        <fieldset>
+                <legend for="interestDescription">Description: </legend>
+
+            <textarea name="interestDescription" id="interestDescription" rows="3" cols="33"></textarea>
+        </fieldset>
+        <fieldset>
+                <legend for="interestCost">Cost: </legend>
+
+            <input type="text" name="interestCost" id="interestCost">
+        </fieldset>
+        <fieldset>
+                <legend for="interestLocation">interestLocation: </legend>
+
+            <select id="interestLocation">
+                <option value="Italy">Italy</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="France">France</option>
+     
+            </select>
+        </fieldset>
+
+    </form>
+
+    <section id="interestsContainer"></section>
+
+
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>
