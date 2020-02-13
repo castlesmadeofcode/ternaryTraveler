@@ -26,10 +26,10 @@
       "review": "You can definitely get things for a lower price if you are willing to bargain!"
     },
     {
-      "name": "new2",
-      "description": "new2",
-      "cost": "new2",
-      "review": "new2",
+      "name": "beer",
+      "description": "drink the beer",
+      "cost": "2$",
+      "review": "good beer",
       "placeId": "2",
       "id": 2
     }
