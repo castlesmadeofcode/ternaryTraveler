@@ -13,12 +13,12 @@
 
 
     <form action="" id="journal">
-        <fieldset>
+        <fieldset id="nameField">
             <legend for="interestName">Name of interest: </legend>
 
             <input type="text" name="interestName" id="interestName">
         </fieldset>
-        <fieldset>
+        <fieldset id = "descriptionField">
             <legend for="interestDescription">Description: </legend>
 
             <textarea name="interestDescription" id="interestDescription" rows="3" cols="33"></textarea>
@@ -33,7 +33,7 @@
 
             <input type="text" name="interestReview" id="interestReview">
         </fieldset>
-        <fieldset>
+        <fieldset id ="locationField">
             <legend for="interestLocation">interestLocation: </legend>
 
             <select id="interestLocation">
@@ -48,6 +48,7 @@
 
     <fieldset>
             <button id="saveButton" class="saveBtn">Save</button>
+            <input type="hidden" id="interestId" value="" />
         </fieldset>
 
         

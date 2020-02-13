@@ -15,6 +15,16 @@ const API = {
         }).then(response => response.json())
 
     },
+    updateInterestEntry(interest) {
+        return fetch(`${baseUrl}/interests/${interest.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(interest)
+        });
+    },
+
     deleteInterest(id) {
         return fetch(`${baseUrl}/interests/${id}`, {
           method: "DELETE"
